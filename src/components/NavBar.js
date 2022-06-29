@@ -1,13 +1,12 @@
 import fotito from '../img/BLlogo-printmey-Completo.png';
-
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
         <nav class="nav navbar-expand-lg navbar-light bg-info text-dark">
 
-           
-            
-            <img class=".ml-2"    src={fotito} alt="..." height="140"/>
+            <img class="ps-4"    src={fotito} alt="..." height="130"/>
+
             <div class="container-fluid">
             
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,6 +29,7 @@ const NavBar = () => {
                     </ul>
                 </div>
             </div>
+            <CartWidget/>
         </nav>
     );
 };
