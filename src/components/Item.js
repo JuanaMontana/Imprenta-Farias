@@ -1,15 +1,22 @@
-import React from 'react'
+import React from "react";
+import {Container ,Card, Col, Button} from 'react-bootstrap';  
 
-const Item = ({id, title, description,  price, image}) => {
+const Item = ({ id, title, description, price, image }) => {
   return (
-    <div>
+    <Card style={{ width: '18rem' }}>
+   
+      <div class="card-header">
         <h2>{title}</h2>
-        <p>{description}</p>
-        <p> {price}</p>
-        <img src={image}  alt={title}  />
-        <a href={"/" + id}>Ver detalle</a>
-    </div>
-  )
-}
+      </div>
 
-export default Item
+      <p>{description}</p>
+      <p> {price}</p>
+      <img src={image} alt={title} />
+      <a href={"/" + id}>Ver detalle</a>
+      </Card>
+
+
+  );
+};
+
+export default Item;
