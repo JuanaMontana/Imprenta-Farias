@@ -3,9 +3,9 @@ import {Container ,Card, Col, Button} from 'react-bootstrap';
 
 const Item = ({ id, title, description, price, image }) => {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem' }} className="m-5">
    
-      <div class="card-header">
+      <div class="card-header ">
         <h2>{title}</h2>
       </div>
 

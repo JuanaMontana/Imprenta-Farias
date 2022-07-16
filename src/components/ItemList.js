@@ -4,14 +4,15 @@ import Item from "./Item";
 const ItemList = ({ items }) => {
   return (
     <div>
-        <div className="card">
+        <div class="row justify-content-md-center">
         {items.map((el) => (
         <Item {...el}
         key={el.id}
         />
       ))}
-    </div>
     
+    
+  </div>
   </div>
 
       
