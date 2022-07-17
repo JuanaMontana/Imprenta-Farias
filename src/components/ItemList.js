@@ -12,7 +12,7 @@ const ItemList = ({ items }) => {
         key={el.id}
         />))}
               
-              <ItemCount stock={5} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
+              
   </div>
   </div>
 

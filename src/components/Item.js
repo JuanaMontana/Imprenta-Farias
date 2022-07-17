@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount";
 
 const Item = ({ id, title, description, price, image }) => {
   return (
-    <Card style={{ width: '18rem' }} className="m-5">
+    <Card style={{ width: '18rem' }} className="m-5 card text-center">
    
       <div class="card-header ">
         <h2>{title}</h2>
