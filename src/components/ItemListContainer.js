@@ -23,8 +23,7 @@ ItemListContainer.then((param) => {
 
 const ItemListContainer = ({ grettings }) => {
   return (
-    <div >{grettings}
-      <ItemCount stock={5} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
+    <div class="row justify-content-md-center">{grettings = "este es el grettings"}
       <ItemList items={products}/>
     </div>
   )

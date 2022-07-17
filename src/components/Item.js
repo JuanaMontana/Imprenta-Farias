@@ -1,5 +1,6 @@
 import React from "react";
 import {Container ,Card, Col, Button} from 'react-bootstrap';  
+import ItemCount from "./ItemCount";
 
 const Item = ({ id, title, description, price, image }) => {
   return (
@@ -13,6 +14,7 @@ const Item = ({ id, title, description, price, image }) => {
       <p> {price}</p>
       <img src={image} alt={title} />
       <a href={"/" + id}>Ver detalle</a>
+      <ItemCount stock={5} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
       </Card>
 
 
