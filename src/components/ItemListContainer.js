@@ -22,7 +22,7 @@ const ItemListContainer = () => {
 
   return (
     <div class="row justify-content-md-center">
-      <ItemList items={products} />
+    <ItemList items={products} />
     </div>
   );
 };

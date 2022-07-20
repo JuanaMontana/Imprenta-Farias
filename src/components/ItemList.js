@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Item";
-import ItemCount from "./ItemCount";
+
 
 const ItemList = ({ items }) => {
   return (

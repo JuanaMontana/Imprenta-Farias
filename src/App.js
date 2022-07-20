@@ -17,7 +17,7 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="inicio">Inicio</Link> | <Link to="contacto">Contacto</Link>
+        <Link to="inicio">Inicio</Link> | <Link to="contacto">Contacto</Link> | <Link to="detalle">Detalle</Link>
       </nav>
 
       <Outlet />

@@ -8,6 +8,7 @@ import "bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./views/Contacto";
 import Inicio from "./views/Inicio";
+import Detalle from "./views/Detalle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,6 +18,7 @@ root.render(
         <Route path="/" element={<Inicio />} />
         <Route path="inicio" element={<Inicio />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="detalle" element={<Detalle />} />
       </Routes>
       <App />
     </React.StrictMode>
