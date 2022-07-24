@@ -6,7 +6,6 @@ const detalle = () => {
   return (
     
     <div>
-    <NavBar />
     <ItemDetailContainer />
         Detalle</div>
   )

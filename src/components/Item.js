@@ -13,7 +13,7 @@ const Item = ({ id, title, description, price, image }) => {
       <p>{description}</p>
       <p> {price}</p>
       <img src={image} alt={title} />
-      <a href={"/" + id}>Ver detalle</a>
+      <a href={"/item/" + id}>Ver detalle</a>
       <ItemCount stock={5} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
       </Card>
 

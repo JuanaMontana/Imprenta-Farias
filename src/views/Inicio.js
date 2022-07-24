@@ -5,7 +5,7 @@ import ItemListContainer from "../components/ItemListContainer";
 function Inicio() {
   return (
     <div >
-      <NavBar />
+      
       <ItemListContainer grettings />
     </div>
   );

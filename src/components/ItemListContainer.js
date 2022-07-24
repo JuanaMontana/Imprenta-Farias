@@ -1,33 +1,41 @@
-import React, { useState, useEffect } from "react";
-import ItemList from "./ItemList";
+import React, { useState, useEffect } from 'react'
+import ItemList from './ItemList'
+import { useParams } from 'react-router-dom';
 import Products from "../products.json";
 
+
 const ItemListContainer = () => {
-  const [products,setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    const promesa = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const items = Products;
+    const { categoryID } = useParams();
+    const getProducts = () => {
+        fetch('https://fakestoreapi.com/products/')
+            .then((res) => res.json())
+            .then(data => {
+                if (categoryID) {
+                    setProducts(data.filter((p) => p.category === categoryID))
+                } else {
+                    setProducts(data)
+                }
+            })
+    }
 
-        resolve(items);
-      }, 1000);
-    });
+    useEffect(() => {
+        getProducts()
+    }, [categoryID])
 
-    promesa.then((param) => {
-      console.log({ param });
-      setProducts(param);
-    });
-  }, []);
-
-  return (
-    <div class="row justify-content-md-center">
-    <ItemList items={products} />
-    </div>
-  );
+    return (
+      <div class="row justify-content-md-center">
+      <ItemList items={products} />
+      </div>
+    )
 };
 
-export default ItemListContainer;
+export default ItemListContainer
+
+
+
+
 
 /*const ItemListContainer = new Promise((resolve, reject) => {
   setTimeout(() => {

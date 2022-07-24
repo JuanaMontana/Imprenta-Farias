@@ -10,10 +10,10 @@ const ItemDetail = ({ id, title, description, price, image }) => {
       <div class="card-header text-center">
         <h2>{title}</h2>
       </div>
-      <Row className="justify-content-md-center text-center">
-        <Col xs lg="8">
+      <Row className="justify-content-md-center text-center mt-5">
+        <Col  xs lg="8">
           
-          <img src={image} alt={title} />
+          <img src={image} alt={title} height="700"/>
         </Col>
         <Col xs lg="3">
           
@@ -22,8 +22,8 @@ const ItemDetail = ({ id, title, description, price, image }) => {
       <strong> <p> Id del producto: {id}</p></strong>
       
         </Col>
-        <Col xs lg="2">
-        <h3>Precio: {price} $USD </h3>
+        <Col xs lg="3">
+        <h3 class="mt-4">Precio: {price} $USD </h3>
         </Col>
       </Row>
     </Container>
