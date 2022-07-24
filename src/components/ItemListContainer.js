@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import Products from "../products.json";
-import { Navbar } from "react-bootstrap";
+
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
