@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 
 
 
-const ItemDetail = ({ id, title, description, price, image }) => {
+const ItemDetail = ({ id, title, description, price, image, stock }) => {
   const [val, setVal] = useState('');
   
 
@@ -26,14 +26,15 @@ const ItemDetail = ({ id, title, description, price, image }) => {
         </Col>
         <Col xs lg="3">
         <strong> <p> Id del producto: {id}</p></strong>
+        
           <p>{description}</p>
-
+          <p>Stock disponible: {stock} unidades</p>
       
 
       <h3 class="mt-4">Precio: {price} $USD </h3>
 
 
-      <ItemCount stock={5} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
+      <ItemCount stock={stock} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
       
       
         </Col>

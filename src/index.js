@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./views/Contacto";
 import Inicio from "./views/Inicio";
 import Detalle from "./views/Detalle";
+import Pagar from "./views/Pagar";
 import ItemListContainer from "./components/ItemListContainer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,6 +21,7 @@ root.render(
         <Route path="contacto" element={<Contacto />} />
         <Route path='/category/:categoryID' element={<ItemListContainer />}/>
         <Route path="/item/:id" element={<Detalle />} />
+        <Route path="pagar" element={<Pagar />} />
       </Routes>
       
     </React.StrictMode>

@@ -2,7 +2,7 @@ import React from "react";
 import {Container ,Card, Col, Button} from 'react-bootstrap';  
 import ItemCount from "./ItemCount";
 
-const Item = ({ id, title, description, price, image }) => {
+const Item = ({ id, title, description, price, image, rating}) => {
   return (
     <Card style={{ width: '18rem' }} className="m-5 card text-center">
    
@@ -12,6 +12,7 @@ const Item = ({ id, title, description, price, image }) => {
 
       <p>{description}</p>
       <p> {price}</p>
+      
       <img src={image} alt={title} />
       <a class="pt-4" href={"/item/" + id}>Ver detalle</a>
       

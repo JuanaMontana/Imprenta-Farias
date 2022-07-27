@@ -33,7 +33,7 @@ const ItemCount = ({ stock, initial, onnAdd }) => {
         <button
           type="button"
           class="btn btn-outline-info"
-          onClick={() => navigate("/Pagar")}
+          onClick={() => navigate("/pagar")}
         >
           Terminar pago
         </button>
