@@ -7,6 +7,8 @@ import Row from "react-bootstrap/Row";
 
 const ItemDetail = ({ id, title, description, price, image }) => {
   const [val, setVal] = useState('');
+  
+
   const onChangeInputText = ({ target }) => {
     setVal(target.value);
     console.log(val);
@@ -31,7 +33,7 @@ const ItemDetail = ({ id, title, description, price, image }) => {
       <h3 class="mt-4">Precio: {price} $USD </h3>
 
 
-      <ItemCount stock={5} initial={1} onAdd={onChangeInputText}/>
+      <ItemCount stock={5} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
       
       
         </Col>
@@ -45,19 +47,3 @@ const ItemDetail = ({ id, title, description, price, image }) => {
 
 export default ItemDetail;
 
-/*const ItemDetail = ({ items }) => {
-    return (
-        <div>
-            <div class="row justify-content-md-center">
-              
-            {items.map((el) => (
-            <Item {...el}
-            key={el.id}
-            />))} 
-      </div>
-      </div>
-    
-          
-      );
-    };
-*/
