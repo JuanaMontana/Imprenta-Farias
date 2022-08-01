@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Container, Col } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import Row from "react-bootstrap/Row";
+import { CartContext } from "../context/useContext";
+
 
 
 
 const ItemDetail = ({ id, title, description, price, image, stock}) => {
   const [val, setVal] = useState('');
-  
+  const {items, addItem} = useContext(CartContext);
 
   const onChangeInputText = ({ target }) => {
     setVal(target.value);
@@ -34,7 +36,7 @@ const ItemDetail = ({ id, title, description, price, image, stock}) => {
       <h3 class="mt-4">Precio: {price} $USD </h3>
 
 
-      <ItemCount stock={stock} initial={1} onnAdd={(n) => alert(`agregados ${n} productos`)}/>
+      <ItemCount id={id} title={title} price={price} stock={10} initial={1} onnAdd={addItem}/>
       
       
         </Col>

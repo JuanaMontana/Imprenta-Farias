@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
-const ItemCount = ({ stock, initial, onnAdd }) => {
+const ItemCount = ({ id, title, price, stock, initial, onnAdd }) => {
   const [count, setCount] = useState(initial);
   const navigate = useNavigate();
   const [carrito, setCarrito] = useState(true);
@@ -16,7 +16,7 @@ const ItemCount = ({ stock, initial, onnAdd }) => {
           class="btn btn-outline-info"
           onClick={() => {
             if (count <= stock) {
-              onnAdd(count);
+              onnAdd(id, title,price, count);
             } else {
               alert("No hay suficientes productos");
             }
@@ -33,7 +33,7 @@ const ItemCount = ({ stock, initial, onnAdd }) => {
         <button
           type="button"
           class="btn btn-outline-info"
-          onClick={() => navigate("/pagar")}
+          onClick={() => navigate("/cart")}
         >
           Terminar pago
         </button>

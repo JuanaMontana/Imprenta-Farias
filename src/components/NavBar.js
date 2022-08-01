@@ -2,6 +2,8 @@ import fotito from "../img/BLlogo-printmey-Completo.png";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import React, { useContext } from "react";
+import { CartContext } from "../context/useContext";
 
 const NavBar = () => {
   return (
