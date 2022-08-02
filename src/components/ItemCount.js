@@ -6,7 +6,7 @@ const ItemCount = ({ id, title, price, stock, initial, onnAdd }) => {
   const [count, setCount] = useState(initial);
   const navigate = useNavigate();
   const [carrito, setCarrito] = useState(true);
-
+  
   const car = () => {
 
     if (carrito){

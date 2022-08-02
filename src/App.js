@@ -1,20 +1,19 @@
+import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavBar";
 import { CartProvider } from "./context/useContext";
+import RouterApp from "./router/Router";
 
-import { Outlet, Link } from "react-router-dom";
+
 
 function App() {
   return (
-    
+    <div>
       <CartProvider>
-        <NavBar />
-        <Outlet />
+      <RouterApp />
       </CartProvider>
-    
+    </div>
   );
 }
-
 export default App;
