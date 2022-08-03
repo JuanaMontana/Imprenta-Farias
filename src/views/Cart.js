@@ -34,7 +34,8 @@ const Cart = () => {
         
         <h1 className=" m-4">Total a pagar:{cantidad}</h1>
         <button  onClick={clearItems} className="btn btn-danger m-4">Vaciar carrito</button>
-        <button  onClick={clearItems} className="btn btn-secondary m4">Finalizar compra</button>
+        <button  className="btn btn-secondary m4">Finalizar compra</button>
+        
         </div>
     </div> 
     
