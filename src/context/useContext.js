@@ -40,25 +40,36 @@ export const CartProvider = ({ children }) => {
 
   }
 
-  const addItem = (id, title,price, count) => {
-
+ const addItem=(id, title,price, count) => {
+    isIncart(id)
+        ?
+        setItems(items.map((prod)=>{
+            if(prod.id === id){
+                prod.count+=count
+              }    
+            return prod
+        }))
+        :
+                                                                    
         setItems([...items, { id, title, price, count}]);
-  }
+
+}
+
 
   const Conteo = () => {
     let totalcount = 0;
     console.log(items)
     for (let i = 0; i < items.length; i++){
-      //console.log(items[i])
+      console.log(items[i])
       totalcount = totalcount + parseInt(items[i].count);
     }
     //console.log(totalcount)
     return totalcount
   }
 
-  const removeItem=(id)=>{
-    setItems(items.filter(item=>item.id!== id))
-}
+ 
+const removeItem=(id)=>{
+  setItems(items.filter(item=>item.id!=id))}
 
 const clearItems=()=>{
   setItems([])

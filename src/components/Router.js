@@ -17,7 +17,6 @@ const RouterApp = () =>{
     return(
         <>
         <BrowserRouter>
-            
                 <Routes>
                 <NavBar/>
                     <Route path="/" element={<Inicio />} > </Route> 
