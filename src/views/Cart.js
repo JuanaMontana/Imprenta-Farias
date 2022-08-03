@@ -14,7 +14,7 @@ const Cart = () => {
           
           <h1>{item.count}</h1>
           <h1>{item.price}</h1>
-          <h6 style={{color:"red"}} onClick={()=>removeItem(item.id)}> Borrar producto  </h6>
+          <h6 style={{color:"red"}} onClick={()=>removeItem(item)}> Borrar producto  </h6>
 
         </div>
 

@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React, { useContext } from "react";
 import { CartContext } from "../context/useContext";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   return (
     
     <nav class="nav navbar-expand-lg navbar-light bg-info text-dark ">
@@ -31,9 +33,11 @@ const NavBar = () => {
         >
           <ul class="navbar-nav justify-content-center">
             <li class="nav-item m-5">
-              <a class="nav-link active" aria-current="page" href="/">
-                Inicio
-              </a>
+            <Link to="/" class="nav-link active" href="#">
+            
+             Inicio
+            
+            </Link>
             </li>
             <li class="nav-item m-5">
               <a class="nav-link active" href="#">

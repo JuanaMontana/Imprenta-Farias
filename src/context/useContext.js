@@ -1,10 +1,37 @@
-import React, { createContext, useState } from "react";
-
+import React, { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 export const CartContext = createContext([])
 
 export const CartProvider = ({ children }) => {
-  const [items, setItems] = useState([{
-  }])
+  const [items, setItems] = useState([])
+  
+
+  
+
+  useEffect(() => { 
+    //console.log("segundo")
+    localStorage.setItem('items', JSON.stringify(items))
+
+
+
+  },[items])
+
+  useEffect(() => {
+    //console.log("primer")
+    const preserveCart = async () => {
+      //console.log("sadasd")
+      //console.log(localStorage.getItem("items"))
+      let saveItems = JSON.parse(localStorage.getItem("items"))
+      //console.log("primer")
+      if (saveItems && saveItems.length > 0) {
+        setItems(saveItems)
+        
+    } 
+    
+  }
+    preserveCart ()
+    },[])
+
 
   const isIncart = (id) => {
 
@@ -14,8 +41,19 @@ export const CartProvider = ({ children }) => {
   }
 
   const addItem = (id, title,price, count) => {
-        console.log(items)
-        setItems([...items, { id, title,price, count: count}]);
+
+        setItems([...items, { id, title, price, count}]);
+  }
+
+  const Conteo = () => {
+    let totalcount = 0;
+    console.log(items)
+    for (let i = 0; i < items.length; i++){
+      //console.log(items[i])
+      totalcount = totalcount + parseInt(items[i].count);
+    }
+    //console.log(totalcount)
+    return totalcount
   }
 
   const removeItem=(id)=>{
@@ -27,7 +65,7 @@ const clearItems=()=>{
 }
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, clearItems }}>
+    <CartContext.Provider value={{ items, addItem, removeItem, clearItems ,Conteo}}>
       {children}
     </CartContext.Provider>
   )

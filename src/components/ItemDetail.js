@@ -9,6 +9,7 @@ import { CartContext } from "../context/useContext";
 
 const ItemDetail = ({ id, title, description, price, image, stock}) => {
   const [val, setVal] = useState('');
+  
   const {items, addItem} = useContext(CartContext);
 
   const onChangeInputText = ({ target }) => {

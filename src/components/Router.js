@@ -17,8 +17,9 @@ const RouterApp = () =>{
     return(
         <>
         <BrowserRouter>
-            <NavBar/>
+            
                 <Routes>
+                <NavBar/>
                     <Route path="/" element={<Inicio />} > </Route> 
                     <Route path="contacto" element={<Contacto />} ></Route>
                     <Route path="/category/:categoryID" element={<ItemListContainer />} ></Route>

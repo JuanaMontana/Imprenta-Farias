@@ -1,6 +1,7 @@
 import React from "react";
 import {Container ,Card, Col, Button} from 'react-bootstrap';  
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const Item = ({ id, title, description, price, image, rating}) => {
   return (
@@ -14,7 +15,11 @@ const Item = ({ id, title, description, price, image, rating}) => {
       <p> {price}</p>
       
       <img src={image} alt={title} />
-      <a class="pt-4" href={"/item/" + id}>Ver detalle</a>
+
+
+      <Link to={"/item/" + id} className="btn btn-outline-primary m-4" >Show Details</Link>    
+     
+
       
       </Card>
 
