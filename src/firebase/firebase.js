@@ -1,7 +1,14 @@
-import { initializeApp } from "firebase/app";
-import  {collection, doc, getDoc,getDocs, getFirestore,query,where,orderBy } from "firebase/firestore";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import { getStorage } from 'firebase/storage';
+import { getDocs, getFirestore } from 'firebase/firestore';
+import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDXGLpSH6L22tGZVrQ9iBnV-sr8NIOsJzM",
   authDomain: "imprenta-farias.firebaseapp.com",
@@ -12,22 +19,11 @@ const firebaseConfig = {
 };
 
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);  
 
-const docRef=doc(db,'items','myop8wjSTBr670nas07F');
-getDoc(docRef).then((snapshot)=>{
-  console.log({id:snapshot.id,... snapshot.data() });
-});
-
-
-const colRef=collection(db,'items');
-constq=query(colRef,where('done','==',true),orderBy('text','desc'));
-getDocs(q).then((snp)=>{
-  console.log(
-    snp.docs.map((document)=>({
-      ... document.data(),
-      id:document.id,
-    }))
- );
-});
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const storage = getStorage(app);
+const db = getFirestore(app);
+const auth = getAuth();
+export { app, storage, db, auth};

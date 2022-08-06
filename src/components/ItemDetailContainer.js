@@ -3,6 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import ItemDetail from "./ItemDetail";
 import ProductData from "../ProductData";
+import { doc, getDoc, getFirestore} from 'firebase/firestore';
+import { async } from '@firebase/util';
+import { getProductsById } from 'firebase/firestore';
+
+
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
@@ -10,17 +15,23 @@ const ItemDetailContainer = () => {
 
     const {id} = useParams();
 
-    const getProducts = () => {
+    /*const getProducts = () => {
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then((res) => res.json())
             .then(data => {
                setProduct({...data, stock: Math.floor(Math.random() * 100)+ 1})
             })
-    }
+    }*/
 
-    useEffect(() => {
-        getProducts()
-    },[])
+    /*useEffect(() => {
+        const db = getFirestore();
+        db.collection('items').doc(id)
+        .get()
+        .then(res => {
+          setProduct({id:res.id, ...res.data()})
+        })
+
+    }, [id]);*/
 
 
     return (
