@@ -11,9 +11,10 @@ import Detalle from "./views/Detalle";
 import Cart from "./views/Cart";
 import ItemListContainer from "./components/ItemListContainer";
 import { CartProvider } from "./context/useContext";
+import './firebase/firebase.js'
 
 
-  
+
   ReactDOM.render(
     <React.StrictMode>
         <App />
