@@ -4,8 +4,7 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
 import ProductData from "../ProductData";
 import { doc, getDoc, getFirestore} from 'firebase/firestore';
-import { async } from '@firebase/util';
-import { getProductsById } from 'firebase/firestore';
+
 
 
 
@@ -32,6 +31,10 @@ const ItemDetailContainer = () => {
         })
 
     }, [id]);*/
+
+    useEffect(() => {
+        getProductById(id).then((product) => setItem(product));
+      }, [id]);
 
 
     return (
