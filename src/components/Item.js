@@ -17,7 +17,7 @@ const Item = ({ id, title, description, price, image, stock}) => {
       <img src={image} alt={title} />
 
 
-      <Link to={"/item/" + id} className="btn btn-outline-primary m-4" >Show Details</Link>    
+      <Link to={"/item/" + id} className="btn btn-outline-primary m-4" >Ver Detalles</Link>    
      
 
       
