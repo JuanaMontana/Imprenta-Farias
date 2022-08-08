@@ -41,15 +41,32 @@ const app = initializeApp(firebaseConfig);
 
 
 
-export const getItems = () => {
-  const colRef = collection(db, 'items'); // referencia a la collection
-  const q = query(colRef);
-  return getDocs(q);
+export const getProducts = async (categoryId) => {
+  if (categoryId) {
+    return await getProductsByCategoryId(categoryId);
+  } else {
+    return await getAllProducts();
+  }
 };
 
-export const getDetailItem = (id) => {
-  const docRef = doc(db, 'items', id); //referencia a el document
-  return getDoc(docRef);
+export const getProductById = async (productId) => {
+  if (!productId) throw new Error("Missing productId");
+
+  return (await getDoc(doc(db, "items", productId))).data();
+};
+
+export const getProductsByCategoryId = async (categoryId) => {
+  if (!categoryId) throw new Error("Missing categoryId");
+
+  const itemCollection = collection(db, "items");
+  const q = query(itemCollection, where("category", "==", categoryId));
+  return await getDocs(q);
+};
+
+export const getAllProducts = async () => {
+  const itemCollection = collection(db, "items");
+  const q = query(itemCollection);
+  return await getDocs(q);
 };
 
 // Get a reference to the storage service, which is used to create references in your storage bucket

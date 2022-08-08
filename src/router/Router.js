@@ -20,7 +20,7 @@ const RouterApp = () =>{
                 <Routes>
                     <Route path="/" element={<Inicio />} > </Route> 
                     <Route path="contacto" element={<Contacto />} ></Route>
-                    <Route path="/category/:categoryID" element={<ItemListContainer/>} ></Route>
+                    <Route path="/category/:categoryId" element={<ItemListContainer/>} ></Route>
                     <Route path="/item/:id" element={<Detalle />} ></Route>
                     <Route path="cart" element={<Cart />} ></Route>
                     
