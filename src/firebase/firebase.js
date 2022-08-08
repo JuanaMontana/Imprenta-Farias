@@ -2,8 +2,24 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getStorage } from 'firebase/storage';
-import { getDocs, getFirestore } from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
+
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  getFirestore,
+  query,
+  where,
+  limit,
+  orderBy,
+  addDoc,
+  setDoc,
+  writeBatch,
+  deleteDoc,
+  onSnapshot,
+} from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,6 +37,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+export const getItems = () => {
+  const colRef = collection(db, 'items'); // referencia a la collection
+  const q = query(colRef);
+  return getDocs(q);
+};
+
+export const getDetailItem = (id) => {
+  const docRef = doc(db, 'items', id); //referencia a el document
+  return getDoc(docRef);
+};
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 const storage = getStorage(app);

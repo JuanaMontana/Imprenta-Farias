@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import ItemDetail from "./ItemDetail";
 import ProductData from "../ProductData";
-import { doc, getDoc, getFirestore} from 'firebase/firestore';
-
-
-
+import { doc, getDoc, getFirestore, querySnapshot} from 'firebase/firestore';
+import { getProductById } from '../firebase/firebase';
+import { collection, getDocs , query } from "firebase/firestore";
+import { getItems  , where } from '../firebase/firebase';
+import { db} from '../firebase/firebase';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
@@ -22,20 +23,22 @@ const ItemDetailContainer = () => {
             })
     }*/
 
-    /*useEffect(() => {
+    useEffect(() => {
         const db = getFirestore();
         db.collection('items').doc(id)
         .get()
         .then(res => {
           setProduct({id:res.id, ...res.data()})
         })
+        console.log(product)
 
-    }, [id]);*/
+    }, [id]);
 
-    useEffect(() => {
-        getProductById(id).then((product) => setItem(product));
-      }, [id]);
+    /*useEffect(() => {
+        getProductById(id).then((product) => setProduct(product));
+      }, [id]);*/
 
+      
 
     return (
         <div>
