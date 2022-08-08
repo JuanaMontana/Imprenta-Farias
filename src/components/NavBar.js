@@ -47,11 +47,11 @@ const NavBar = () => {
             <li class="nav-item active m-5 " aria-current="page">
               <NavDropdown title="Categorias" id="basic-nav-dropdown" >
                 <NavDropdown.Item>
-                  <Link to={"/category/men's clothing" } style={{ textDecoration: 'none',color: 'dark'  }}>men</Link>
+                  <Link to={"/category/printa4" } style={{ textDecoration: 'none',color: 'dark'  }}>PrintA4</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Link to={"/category/women's clothing"} style={{ textDecoration: 'none',color: 'dark'  }}>Women</Link>
+                  <Link to={"/category/llavero"} style={{ textDecoration: 'none',color: 'dark'  }}>Llavero</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>

@@ -38,6 +38,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
+
+
 export const getItems = () => {
   const colRef = collection(db, 'items'); // referencia a la collection
   const q = query(colRef);

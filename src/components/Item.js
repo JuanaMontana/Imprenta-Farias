@@ -3,7 +3,7 @@ import {Container ,Card, Col, Button} from 'react-bootstrap';
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
-const Item = ({ id, title, description, price, image, stock}) => {
+const Item = ({ id, title, description, price, image, stock, category}) => {
   return (
     <Card style={{ width: '18rem' }} className="m-5 card text-center">
    
@@ -11,6 +11,7 @@ const Item = ({ id, title, description, price, image, stock}) => {
         <h2>{title}</h2>
       </div>
       <p>id:{id}</p>
+      <p>categoria:{category}</p>
       <p>{description}</p>
       <p> ${price} CLP</p>
       <p> Stock disponible:{stock}</p>
