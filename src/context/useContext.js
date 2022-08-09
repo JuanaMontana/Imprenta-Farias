@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 export const CartContext = createContext([])
 
 export const CartProvider = ({ children }) => {
@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
 
   }
 
- const addItem=(id, title,price, count) => {
+ const addItem=(id, title,price, count, image) => {
     isIncart(id)
         ?
         setItems(items.map((prod)=>{
@@ -51,7 +51,7 @@ export const CartProvider = ({ children }) => {
         }))
         :
                                                                     
-        setItems([...items, { id, title, price, count}]);
+        setItems([...items, { id, title, price, count, image}]);
 
 }
 
@@ -69,7 +69,7 @@ export const CartProvider = ({ children }) => {
 
  
 const removeItem=(id)=>{
-  setItems(items.filter(item=>item.id!=id))}
+  setItems(items.filter(item=>item.id!==id))}
 
 const clearItems=()=>{
   setItems([])

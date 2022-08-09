@@ -47,19 +47,19 @@ const NavBar = () => {
             <li class="nav-item active m-5 " aria-current="page">
               <NavDropdown title="Categorias" id="basic-nav-dropdown" >
                 <NavDropdown.Item>
-                  <Link to={"/category/printa4" } style={{ textDecoration: 'none',color: 'dark'  }}>PrintA4</Link>
+                  <Link to={"/category/printa4" } style={{ textDecoration: 'none',color: 'dark'  }}>Prints</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Link to={"/category/llavero"} style={{ textDecoration: 'none',color: 'dark'  }}>Llavero</Link>
+                  <Link to={"/category/llavero"} style={{ textDecoration: 'none',color: 'dark'  }}>Llaveros</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Link to={"/category/jewelery"} style={{ textDecoration: 'none',color: 'dark'  }}>Joyas</Link>
+                  <Link to={"/category/sticker"} style={{ textDecoration: 'none',color: 'dark'  }}>Stickers</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Link to={"/category/electronics"} style={{ textDecoration: 'none',color: 'dark'       }}>Electronica</Link>
+                  <Link to={"/category/stickerholo"} style={{ textDecoration: 'none',color: 'dark'       }}>Stickers Holograficos</Link>
                 </NavDropdown.Item>
               </NavDropdown>
             </li>
