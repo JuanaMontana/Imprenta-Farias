@@ -10,6 +10,7 @@ import Inicio from "../views/Inicio";
 import Contacto from "../views/Contacto";
 import Detalle from "../views/Detalle";
 import Tienda from "../views/Tienda"
+import Footer from "../components/Footer";
 
 const RouterApp = () =>{
     
@@ -17,6 +18,7 @@ const RouterApp = () =>{
         <>
         <BrowserRouter>
             <NavBar/>
+            
                 <Routes>
                     <Route path="/" element={<Inicio />} > </Route> 
                     <Route path="contacto" element={<Contacto />} ></Route>
@@ -25,6 +27,7 @@ const RouterApp = () =>{
                     <Route path="cart" element={<Cart />} ></Route>
                     <Route path="tienda" element={<Tienda />} ></Route>
                 </Routes>
+                <Footer/>
         </BrowserRouter>
 
         </>

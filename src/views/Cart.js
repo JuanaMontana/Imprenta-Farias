@@ -15,7 +15,7 @@ const Cart = () => {
   return (
     <div>
       <div className="container text-center mt-2">
-      <h4>Checkout</h4>
+      <h4>Carrito</h4>
         {items.map((item) => (
           <div className="container">
           
@@ -26,6 +26,9 @@ const Cart = () => {
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
                   Precio: ${item.price} CLP
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                  Cantidad: {item.count}
               </li>
               <button onClick={() => removeItem(item.id)} className="btn btn-dark">
                   Eliminar Item

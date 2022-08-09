@@ -40,15 +40,12 @@
   }
 }
 
-.mapa_contacto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 50px;
-  height: auto; }
-
-iframe {
+.footercito{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(37, 150, 190);
+  
+  bottom: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center; }
+}

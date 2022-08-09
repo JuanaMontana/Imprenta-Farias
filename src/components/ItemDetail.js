@@ -37,7 +37,7 @@ const ItemDetail = ({ id, title, description, price, image, stock}) => {
       <h3 class="mt-4">Precio: {price} $CLP </h3>
 
 
-      <ItemCount id={id} title={title} price={price} stock={10} initial={1} onnAdd={addItem}/>
+      <ItemCount id={id} title={title} price={price} stock={stock} initial={1} onnAdd={addItem}/>
       
       
         </Col>
