@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar";
 import Inicio from "../views/Inicio";
 import Contacto from "../views/Contacto";
 import Detalle from "../views/Detalle";
-
+import Tienda from "../views/Tienda"
 
 const RouterApp = () =>{
     
@@ -23,7 +23,7 @@ const RouterApp = () =>{
                     <Route path="/category/:categoryId" element={<ItemListContainer/>} ></Route>
                     <Route path="/item/:id" element={<Detalle />} ></Route>
                     <Route path="cart" element={<Cart />} ></Route>
-                    
+                    <Route path="tienda" element={<Tienda />} ></Route>
                 </Routes>
         </BrowserRouter>
 

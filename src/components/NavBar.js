@@ -40,9 +40,11 @@ const NavBar = () => {
             </Link>
             </li>
             <li class="nav-item m-5">
-              <a class="nav-link active" href="#">
-                Tienda
-              </a>
+            <Link to="/tienda" class="nav-link active" href="#">
+            
+            Tienda
+           
+           </Link>
             </li>
             <li class="nav-item active m-5 " aria-current="page">
               <NavDropdown title="Categorias" id="basic-nav-dropdown" >

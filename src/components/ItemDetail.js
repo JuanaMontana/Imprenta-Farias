@@ -34,7 +34,7 @@ const ItemDetail = ({ id, title, description, price, image, stock}) => {
           <p>stock: {stock}</p>
       
 
-      <h3 class="mt-4">Precio: {price} $USD </h3>
+      <h3 class="mt-4">Precio: {price} $CLP </h3>
 
 
       <ItemCount id={id} title={title} price={price} stock={10} initial={1} onnAdd={addItem}/>

@@ -25,7 +25,7 @@ const Cart = () => {
                   <span className="badge bg-primary rounded-pill"></span>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Precio: ${item.price}
+                  Precio: ${item.price} CLP
               </li>
               <button onClick={() => removeItem(item.id)} className="btn btn-dark">
                   Eliminar Item
@@ -38,9 +38,9 @@ const Cart = () => {
       </div>
       <div class="container text-end">
 
-        <h1 className=" m-4">Total a pagar:{cantidad}</h1>
+        <h1 className=" m-4">Total a pagar:{cantidad} CLP</h1>
         <button onClick={clearItems} className="btn btn-danger m-4">Vaciar carrito</button>
-        <button className="btn btn-secondary m4">Finalizar compra</button>
+        <button className="btn btn-primary m4">Finalizar compra</button>
 
       </div>
     </div>
