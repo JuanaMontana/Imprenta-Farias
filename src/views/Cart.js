@@ -3,6 +3,7 @@ import { CartContext } from "../context/useContext";
 import { Card } from "react-bootstrap";
 import { Container, Col } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -43,7 +44,7 @@ const Cart = () => {
 
         <h1 className=" m-4">Total a pagar:{cantidad} CLP</h1>
         <button onClick={clearItems} className="btn btn-danger m-4">Vaciar carrito</button>
-        <button className="btn btn-primary m4">Finalizar compra</button>
+        <Link to="/checkout" className="btn btn-secondary m-2">Finalizar compra</Link>
 
       </div>
     </div>

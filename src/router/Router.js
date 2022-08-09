@@ -10,6 +10,7 @@ import Inicio from "../views/Inicio";
 import Contacto from "../views/Contacto";
 import Detalle from "../views/Detalle";
 import Tienda from "../views/Tienda"
+import Checkout from "../views/Checkout";
 import Footer from "../components/Footer";
 
 const RouterApp = () =>{
@@ -26,6 +27,7 @@ const RouterApp = () =>{
                     <Route path="/item/:id" element={<Detalle />} ></Route>
                     <Route path="cart" element={<Cart />} ></Route>
                     <Route path="tienda" element={<Tienda />} ></Route>
+                    <Route path="/checkout" element={<Checkout />} ></Route>
                 </Routes>
                 <Footer/>
         </BrowserRouter>
