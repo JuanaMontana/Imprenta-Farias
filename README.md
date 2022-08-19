@@ -1,3 +1,32 @@
+# Introduccion
+
+Este es el proyecto final para el curso de React en CoderHouse. Se trata de un E-Commerce de una imprenta llamada "Printmey" el cual vende sus productos y necesita una pagina web para poder hacerlo. 
+
+# Tecnologias usadas 🛠️
+
+Este proyecto se hizo desde cero,para programar se uso: HTML, CSS, JAVASCRIPT, REACT, FIREBASE, REACT-ROUTER DOM, REACT-BOOSTRAP Y NODEJS.
+Para guardar el proyecto publicamente en codigo se uso : GITHUB
+
+
+- [React JS](https://reactjs.org/)
+- [Bootstrap React](https://react-bootstrap.github.io/)
+- [Font Awesome Icon](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
+- [Firebase](https://firebase.google.com/)
+- [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start)
+- [Sweet Alert 2](https://sweetalert2.github.io/)
+- [github](https://github.com/)
+
+
+# Soporte
+Este proyecto fue probado solamente en GoogleChrome, en su versión 104.0.5112.81 
+
+# Demo
+
+
+
+![demo](gif/demo.gif)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
