@@ -4,7 +4,7 @@ Este es el proyecto final para el curso de React en CoderHouse. Se trata de un E
 
 # Tecnologias usadas 🛠️
 
-Este proyecto se hizo desde cero,para programar se uso: HTML, CSS, JAVASCRIPT, REACT, FIREBASE, REACT-ROUTER DOM, REACT-BOOSTRAP Y NODEJS.
+Este proyecto se hizo desde cero, para programar se uso: HTML, CSS, JAVASCRIPT, REACT, FIREBASE, REACT-ROUTER DOM, REACT-BOOSTRAP Y NODEJS.
 Para guardar el proyecto publicamente en codigo se uso : GITHUB
 
 
@@ -14,17 +14,15 @@ Para guardar el proyecto publicamente en codigo se uso : GITHUB
 - [Firebase](https://firebase.google.com/)
 - [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start)
 - [Sweet Alert 2](https://sweetalert2.github.io/)
-- [github](https://github.com/)
+- [Github](https://github.com/)
 
 
 # Soporte
-Este proyecto fue probado solamente en GoogleChrome, en su versión 104.0.5112.81 
+Este proyecto fue probado en GoogleChrome, en su versión 104.0.5112.81 
 
 # Demo
 
-
-
-![demo](gif/demo.gif)
+![demo](src/gif/demo.gif)
 
 
 # Getting Started with Create React App
