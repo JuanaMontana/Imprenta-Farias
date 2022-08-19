@@ -31,11 +31,13 @@ const firebaseConfig = {
   storageBucket: "imprenta-farias.appspot.com",
   messagingSenderId: "34020098552",
   appId: "1:34020098552:web:843ced6d611cf28274d60d"
+  
 };
 
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 
 
 
@@ -68,10 +70,22 @@ export const getAllProducts = async () => {
   return await getDocs(q);
 };
 
+export const sendOrder = async () => {
+  const order = {
+    buyer : {name: "agustin", phone:"111", email: "a@a.com"},
+    items: [{name: "print",price:100}],
+    total: 100
+  };
+  const db = getFirestore();
+
+  const ordersCollection = collection(db, "orders");
+};
+
 
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 const storage = getStorage(app);
 const db = getFirestore(app);
 const auth = getAuth();
+
 export { app, storage, db, auth};

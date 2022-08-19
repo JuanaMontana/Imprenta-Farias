@@ -60,7 +60,7 @@ export const CartProvider = ({ children }) => {
     let totalcount = 0;
     console.log(items)
     for (let i = 0; i < items.length; i++){
-      console.log(items[i])
+      //console.log(items[i])
       totalcount = totalcount + parseInt(items[i].count);
     }
     //console.log(totalcount)

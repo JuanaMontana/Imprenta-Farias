@@ -1,90 +1,117 @@
-import React, { useState, useContext } from "react";
-import { collection, getFirestore } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import { X, BagCheck } from "react-bootstrap-icons";
+import Card from "react-bootstrap/Card";
 import { CartContext } from "../context/useContext";
 import "firebase/firestore";
 import "firebase/auth";
+import Form from "react-bootstrap/Form";
+import { db } from "../firebase/firebase";
+import Swal from "sweetalert2";
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
+import { useContext, useEffect, useState } from "react";
+import "../components/CartContainer.css"
 
-function Field({
-  name,
-  inputLabel,
-  nameField,
-  style,
-  type,
-  id,
-  placeholder,
-  valueInput,
-  onChange,
-}) {
+import {
+  addDoc,
+  collection,
+  documentId,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+  writeBatch,
+  Timestamp,
+} from "firebase/firestore";
+
+const Forms = () => {
+
+  const { items, removeItem, clearItems } = useContext(CartContext);
+  const { Conteo } = useContext(CartContext);
+
+  let cantidad = 0;
+  for (let i = 0; i < items.length; i++) {
+    cantidad += items[i].price * items[i].count;
+  }
+
+  // const [finishedPurchase, setFinishedPurchase] = useState(false)
+    
+  let itemcitos = {}
+    itemcitos.items = items.map(product => {
+        const id = product.id;
+        const title = product.title
+        const price = product.price
+        const count = product.count
+        return {id, title, price, count}
+    })
+
+
+  console.log("cart items: ", items.length);
+
+  const sendOrder = async (e) => {
+    e.preventDefault();
+
+    let order = {
+      buyer: {
+        name: e.target[0].value,
+        phone: e.target[1].value,
+        email: e.target[2].value,
+      },
+      itemss: itemcitos,
+      
+      total: Conteo(),
+      date: Timestamp.fromDate(new Date()),
+      
+    };
+    console.log("itemssss: " + order.itemss)
+    console.log("order", order);
+
+    const queryCollection = collection(db, "orders");
+
+    const docRef = await addDoc(queryCollection, order);
+
+    const orderNumber = docRef.id;
+
+    console.log("docRef", docRef.id);
+
+    const enviar = (e) => {
+      e.preventDefault();
+
+      Swal.fire(
+        "¡Su compra ha sido exitosa!",
+        "N° de orden: " + orderNumber,
+        "Se le redireccionará al home"
+      ).finally(() => (window.location.href = "/"));
+    };
+
+    enviar(e);
+  };
+
   return (
-    <>
-      <div className="col-sm-6">
-        <label
-          htmlFor={inputLabel}
-          name={name}
-          className="form-label"
-          style={style}
-        >
-          {nameField}
-        </label>
-        <input
-          type={type}
-          value={valueInput}
-          className="form-control"
-          id={id}
-          placeholder={placeholder}
-          required
-          onChange={onChange}
-        ></input>
+  
+  
+    <div>
+      <div className="divPrecioTotal">
+        <span className="precioTotal"> Total: {cantidad} </span>
       </div>
-    </>
-  );
-}
-const Form = () => {
+      <div className="divForm">
+        <Container>
+          <h4>Completá el formulario para terminar tu pedido</h4>
+          <br></br>
+          <Form className="form" onSubmit={sendOrder}>
+            <input type="text" placeholder="nombre" required />
+            <input type="text" placeholder="teléfono" required />
+            <input type="text" placeholder="email" required />
+            <br></br>
+            <div className="buttons">
+              <Button type="submit">Enviar</Button>
 
-    return (
-        <div>
-            <h2 className="p-3 mb-2 text-center mt-4">Finalizar compra</h2>
-            <p className="text-center">Ingresa tus datos</p>
-            <center>
-                <form className="w-75 p-3" id="form"  >
-                <Field
-                  inputLabel="inputName"
-                  name="name"
-                  nameField="Nombre y Apellido"
-                //   valueInput={name}
-                  style={{ paddingTop: "5px" }}
-                  type="text"
-                  id="inputName"
-                  placeholder="Nombre y Apellido"
-                  
-                />
-                <Field                  
-                  inputLabel="inputPhone"
-                  name="phone"
-                  nameField="Teléfono"
-                 // valueInput={phone}
-                  style={{ paddingTop: "10px" }}
-                  type="text"
-                  id="inputPhone"
-                  placeholder="1133445566"
-                  
-                />
-                <Field
-                  inputLabel="inputEmail"
-                  name="email"
-                  nameField="Email"
-                  //valueInput={email}
-                  style={{ paddingTop: "10px" }}
-                  type="email"
-                  id="inputEmail"
-                  placeholder="mail@ejemplo.com"
-                  
-                />
-                    <button   type="submit" className="btn btn-secondary mt-2">Enviar datos</button>
-                </form>
-            </center>
-
-        </div>
-    )
-    }
-export default Form;
+              <br></br>
+            </div>
+          </Form>
+        </Container>
+      </div>
+    </div>
+  ) 
+};
+export default Forms;
