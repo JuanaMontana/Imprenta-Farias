@@ -28,7 +28,7 @@ const ItemDetail = ({ id, title, description, price, image, stock}) => {
           <img src={image} alt={title} width="600"/>
         </Col>
         <Col xs lg="3">
-        <strong> <p> Id del producto: {id}</p></strong>
+        
         
           <p>{description}</p>
           <p>stock: {stock}</p>

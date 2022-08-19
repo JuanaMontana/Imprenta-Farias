@@ -15,12 +15,6 @@ import "../components/CartContainer.css"
 import {
   addDoc,
   collection,
-  documentId,
-  getDocs,
-  getFirestore,
-  query,
-  where,
-  writeBatch,
   Timestamp,
 } from "firebase/firestore";
 
@@ -88,15 +82,14 @@ const Forms = () => {
   };
 
   return (
-  
-  
+    
     <div>
       <div className="divPrecioTotal">
-        <span className="precioTotal"> Total: {cantidad} </span>
+        <span className="precioTotal"> Total: {cantidad} CLP </span>
       </div>
       <div className="divForm">
         <Container>
-          <h4>Completá el formulario para terminar tu pedido</h4>
+          <h4>Completa el formulario para terminar tu pedido</h4>
           <br></br>
           <Form className="form" onSubmit={sendOrder}>
             <input type="text" placeholder="nombre" required />
@@ -111,7 +104,9 @@ const Forms = () => {
           </Form>
         </Container>
       </div>
+      
     </div>
+    
   ) 
 };
 export default Forms;

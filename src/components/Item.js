@@ -10,11 +10,12 @@ const Item = ({ id, title, description, price, image, stock, category}) => {
       <div class="card-header ">
         <h2>{title}</h2>
       </div>
-      <p>id:{id}</p>
-      <p>categoria:{category}</p>
+      
+      
       <p>{description}</p>
+      <p>Categoria: {category}</p>
       <p> ${price} CLP</p>
-      <p> Stock disponible:{stock}</p>
+      <p> Stock disponible: {stock}</p>
       <img src={image} alt={title} />
 
 
