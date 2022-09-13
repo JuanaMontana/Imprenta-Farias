@@ -40,7 +40,7 @@ const Forms = () => {
     })
 
 
-  console.log("cart items: ", items.length);
+  //console.log("cart items: ", items.length);
 
   const sendOrder = async (e) => {
     e.preventDefault();
@@ -57,8 +57,8 @@ const Forms = () => {
       date: Timestamp.fromDate(new Date()),
       
     };
-    console.log("itemssss: " + order.itemss)
-    console.log("order", order);
+    //console.log("itemssss: " + order.itemss)
+    //console.log("order", order);
 
     const queryCollection = collection(db, "orders");
 
@@ -66,7 +66,7 @@ const Forms = () => {
 
     const orderNumber = docRef.id;
 
-    console.log("docRef", docRef.id);
+    //console.log("docRef", docRef.id);
 
     const enviar = (e) => {
       e.preventDefault();

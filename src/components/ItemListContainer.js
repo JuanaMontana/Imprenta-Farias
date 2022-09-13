@@ -6,9 +6,9 @@ import { getProducts } from "../firebase/firebase";
 const ItemListContainer = ({ greeting }) => {
   
   const [products, setProducts] = useState([]);
-  console.log("products:", products);
+  //console.log("products:", products);
   const { categoryId } = useParams();
-  console.log("categoryId:", categoryId);
+  //console.log("categoryId:", categoryId);
 
   useEffect(() => {
     getProducts(categoryId)
@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
         );
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         alert("An error occurred while fetching products");
       });
   }, [categoryId]);

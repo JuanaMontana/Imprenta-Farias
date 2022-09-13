@@ -11,13 +11,6 @@ import {
   getFirestore,
   query,
   where,
-  limit,
-  orderBy,
-  addDoc,
-  setDoc,
-  writeBatch,
-  deleteDoc,
-  onSnapshot,
 } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -70,7 +63,7 @@ export const getAllProducts = async () => {
   return await getDocs(q);
 };
 
-export const sendOrder = async () => {
+/*export const sendOrder = async () => {
   const order = {
     buyer : {name: "agustin", phone:"111", email: "a@a.com"},
     items: [{name: "print",price:100}],
@@ -79,7 +72,7 @@ export const sendOrder = async () => {
   const db = getFirestore();
 
   const ordersCollection = collection(db, "orders");
-};
+};*/
 
 
 

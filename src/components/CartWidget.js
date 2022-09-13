@@ -1,16 +1,9 @@
-import React, { useContext, useEffect , useState } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../context/useContext";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
   const { Conteo } = useContext(CartContext);
-  const navigate = useNavigate();
-
-
-
-
-  
   return (
     <div>
 

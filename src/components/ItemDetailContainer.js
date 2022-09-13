@@ -10,8 +10,6 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
     const {id} = useParams();
 
-
-   
     useEffect(() => {
         const db = getFirestore();
 
@@ -21,11 +19,7 @@ const ItemDetailContainer = () => {
                 setProduct({id: snapshot.id,... snapshot.data()});
             }
         });
-
-        
-
     }, [id]);
-
 
     return (
         <div>
